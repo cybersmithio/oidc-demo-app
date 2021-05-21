@@ -1,5 +1,5 @@
 {
-  "name": "myauto-nodejs",
+  "name": "verify-oidc-demo-js",
   "version": "1.0.0",
   "description": "Demo app that uses the IBM Security Verify OAuth SDK",
   "main": "server.js",
