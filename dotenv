@@ -1,0 +1,4 @@
+OIDC_METADATA=https://your-tenant-id.verify.ibm.com/oidc/endpoint/default/.well-known/openid-configuration
+OIDC_CLIENT_ID=XXXXXXXX-xxxx-xxxx-xxxx-XXXXXXXXXXXX
+OIDC_CLIENT_SECRET=YYYYYYYYYY
+OIDC_REDIRECT_URI=http://localhost:3000/oauth/callback
