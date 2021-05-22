@@ -2,6 +2,7 @@
 const express = require('express');
 const OAuthController = require('../controllers/oauth-controller');
 const oauthController = new OAuthController('openid email profile');
+const config = require('../controllers/config').Config;
 
 const router = express.Router();
 
@@ -12,7 +13,7 @@ router.get('/',  (req, res) => {
         res.redirect('/users');
     } else {
         console.log("[DEBUG] Not logged in")
-        res.render('index', {title: 'Verify OIDC Demo' })
+        res.render('index', {title: 'Verify OIDC Demo', signupEnabled: config.signupLink != "", signupLink: config.signupLink })
     }
 });
 
