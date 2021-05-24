@@ -8,5 +8,6 @@ const router = express.Router();
 // define routes
 router.get('/', userController.getUsersIndex);
 router.get('/profile', userController.getProfile);
+router.get('/consents', userController.getConsents);
 
 module.exports = router;
