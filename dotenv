@@ -1,4 +1,7 @@
-OIDC_METADATA=https://your-tenant-id.verify.ibm.com/oidc/endpoint/default/.well-known/openid-configuration
-OIDC_CLIENT_ID=XXXXXXXX-xxxx-xxxx-xxxx-XXXXXXXXXXXX
-OIDC_CLIENT_SECRET=YYYYYYYYYY
-OIDC_REDIRECT_URI=http://localhost:3000/oauth/callback
+TENANT_URL=https://harbinger.verify.ibm.com
+CLIENT_ID=ed6e45c2-05d2-492c-a3dd-1f3813a4ef87
+CLIENT_SECRET=Zeiqv2WEsy
+REDIRECT_URI=http://localhost:3000/auth/callback
+SCOPE=openid marketing/3.read profile
+USER_REGISTRATION_LINK=https://harbinger.verify.ibm.com/register/verifydemo
+THEME_ID=

@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivshankar/myauto-nodejs.git"
+    "url": "git+https://github.com/vivshankar/verify-oidc-demo-js.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vivshankar/myauto-nodejs/issues"
+    "url": "https://github.com/vivshankar/verify-oidc-demo-js/issues"
   },
-  "homepage": "https://github.com/vivshankar/myauto-nodejs#readme",
+  "homepage": "https://github.com/vivshankar/verify-oidc-demo-js#readme",
   "dependencies": {
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
@@ -27,6 +27,7 @@
     "i": "^0.3.6",
     "ibm-verify-sdk": "^2.0.5",
     "jsonwebtoken": "^8.5.1",
-    "uuidv4": "^6.2.8"
+    "uuidv4": "^6.2.8",
+    "verify-dpcm-sdk-js": "github:vivshankar/verify-dpcm-sdk-js"
   }
 }

@@ -1,9 +1,9 @@
 // import dependencies and initialize the express router
 const express = require('express');
 const OAuthController = require('../controllers/oauth-controller');
-const oauthController = new OAuthController('openid email profile');
 const config = require('../controllers/config').Config;
 
+const oauthController = new OAuthController(config.scope);
 const router = express.Router();
 
 // define routes

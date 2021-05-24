@@ -13,8 +13,6 @@ class OAuthController {
             flowType     : 'authorization',
             scope        : scope
         });
-
-        this._tokens = {};
     }
 
     authorize = (req, res, scope) => {
@@ -69,7 +67,9 @@ class OAuthController {
         })
 
         req.session.destroy();
-        res.redirect('/');
+        const proxyHost = req.headers["x-forwarded-host"];
+        const host = proxyHost ? proxyHost : req.headers.host;
+        res.redirect(config.tenantUrl + '/idaas/mtfim/sps/idaas/logout?redirectUrl=' + encodeURIComponent(req.protocol + '://' + host) + "&themeId=" + config.themeId);
     }
 
     static isLoggedIn(req) {
