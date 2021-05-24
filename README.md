@@ -53,6 +53,13 @@ The developer portal is only accessible by a user who belongs to the Developer g
 7. Enter `CLIENT_ID` and `CLIENT_SECRET` based on step 3
 8. Save the file
 
+### Configure for self-registration
+
+1. Login to IBM Security Verify Admin Console
+2. In the navigation menu, click on "User Flows"
+3. Create a new registration flow and publish
+4. Set `USER_REGISTRATION_LINK` in the .env file to the static link to the flow
+
 ### Run the application
 
 1. Install node dependencies
