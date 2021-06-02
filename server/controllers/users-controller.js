@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const OAuthController = require('./oauth-controller');
-const DPCM = require('verify-dpcm-sdk-js');
+const Privacy = require('verify-dpcm-sdk-js');
 const config = require('./config').Config;
 
 class UsersController {
@@ -43,7 +43,7 @@ class UsersController {
             accessToken: OAuthController.getAuthToken(req).access_token
         }
 
-        let dpcmClient = new DPCM(config, {})
+        let dpcmClient = new Privacy(config, auth, {})
         dpcmClient.getUserConsents(auth).then(result => {
             res.render('consents', { user: idTokenPayload, consents: result.response.consents, title: 'My Consents' });
         }).catch(err => {
