@@ -45,7 +45,7 @@ class UsersController {
 
         let dpcmClient = new Privacy(config, auth, {})
         dpcmClient.getUserConsents(auth).then(result => {
-            res.render('consents', { user: idTokenPayload, consents: result.response.consents, title: 'My Consents' });
+            res.render('consents', { user: idTokenPayload, consents: result.consents, title: 'My Consents' });
         }).catch(err => {
             console.log("Error=" + err);
             res.render('consents', { user: idTokenPayload, consents: null, title: 'No consents found' });
