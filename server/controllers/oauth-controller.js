@@ -1,4 +1,5 @@
 const config = require('./config').Config;
+
 const OAuthContext = require('ibm-verify-sdk').OAuthContext;
 
 class OAuthController {
@@ -24,6 +25,7 @@ class OAuthController {
     }
 
     aznCallback = (req, res) => {
+        console.log("Request info: " + JSON.stringify(req));
         this._authClient.getToken(req.url).then(token => {
     
             console.log("Got token - " + JSON.stringify(token));

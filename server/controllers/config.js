@@ -3,6 +3,7 @@ require('dotenv').config();
 
 exports.Config = {
     tenantUrl    : process.env.TENANT_URL,
+    authnUrl     : process.env.AUTHORIZATION_URL,
     clientId     : process.env.CLIENT_ID,
     clientSecret : process.env.CLIENT_SECRET,
     redirectUri  : process.env.REDIRECT_URI,
