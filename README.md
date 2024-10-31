@@ -75,3 +75,53 @@ The developer portal is only accessible by a user who belongs to the Developer g
     ```
 
 3. Open the browser and go to http://localhost:3000 and you should be able to use the application
+
+
+
+
+# Cybersmith.io notes
+
+## Overview
+These are my notes on getting this project running on a Windows machine with Git bash in VS Code.  
+
+In this scenario:
+* The OP (OpenID Connect Provider) will be an IBM Verify Access (on-premise) system or IBM Verify (SaaS)
+* The RP (Relying Party) will be this application.
+
+## Configuring IBM Verify (SaaS)
+
+* Log into Verify
+* Go to Appplications > Applications
+* Click Add an Application
+* Click Custom Application
+* Click Add application
+* For the application name, call it OIDC Demo App
+* Put whatever you want for the company name
+* Change to the Sign-on tab
+
+
+## Running Application
+After forking the project and opening in VS Code, open a terminal:
+```
+npm install
+```
+
+Copy the `dotenv` file and name it `.env`
+
+Edit the .env file and update with information about the Verify Access IdP:
+```
+TENANT_URL=https://www.iamlab3.local
+CLIENT_ID=ed6e45c2-05d2-492c-a3dd-1f3813a4ef87
+CLIENT_SECRET=Zeiqv2WEsy
+REDIRECT_URI=http://localhost:3000/auth/callback
+SCOPE=openid marketing/email.read profile
+USER_REGISTRATION_LINK=https://www.iamlab3.local/register/verifydemo
+THEME_ID=
+```
+
+
+
+Then run the application:
+```
+npm start
+```

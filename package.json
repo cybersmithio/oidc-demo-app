@@ -1,7 +1,7 @@
 {
-  "name": "verify-oidc-demo-js",
+  "name": "oidc-test-app",
   "version": "1.0.0",
-  "description": "Demo app that uses the IBM Security Verify OAuth SDK",
+  "description": "OIDC test app ",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vivshankar/verify-oidc-demo-js.git"
+    "url": "git+https://github.com/cybersmithio/oidc-demo-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vivshankar/verify-oidc-demo-js/issues"
+    "url": "https://github.com/cybersmithio/oidc-demo-app/issues"
   },
-  "homepage": "https://github.com/vivshankar/verify-oidc-demo-js#readme",
+  "homepage": "https://github.com/cybersmithio/oidc-demo-app#readme",
   "dependencies": {
     "dotenv": "^9.0.2",
     "express": "^4.17.1",

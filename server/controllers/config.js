@@ -9,4 +9,7 @@ exports.Config = {
     scope        : process.env.SCOPE,
     signupLink   : process.env.USER_REGISTRATION_LINK,
     themeId      : process.env.THEME_ID,
+    serverHttps  : process.env.SERVER_HTTPS,
+    serverPort   : process.env.SERVER_PORT,
+    fqdn         : process.env.FQDN,
 };

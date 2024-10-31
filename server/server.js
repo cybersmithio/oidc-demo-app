@@ -1,11 +1,13 @@
-const PORT = process.env.PORT || 3000;
-
 // initialize libraries
 const express = require('express');
 const session = require('express-session')
 const handlebars = require('express-handlebars');
 const sessionRoutes = require('./routes/session-route');
 const usersRoutes = require('./routes/users-route');
+const config = require('./controllers/config').Config;
+var fs = require('fs');
+var https = require('https')
+
 
 // initialize handlebars
 var hbs = handlebars.create({
@@ -69,6 +71,21 @@ app.use(express.static(__dirname + '/../public'))
 app.use('/', sessionRoutes);
 app.use('/users', usersRoutes);
 
-app.listen(PORT, () => {
-    console.log('Server started and listening on port 3000');
-});
+if (config.serverHttps) { 
+    console.log(`Attempting to start app in secure mode.`)
+    https.createServer({
+        key: fs.readFileSync('./server.key'),
+        cert: fs.readFileSync('./server.cert')
+      }, app)
+      .listen(config.serverPort, function() {
+        console.log(`Example app listening on port ${config.serverPort}! Go to https://${config.fqdn}:${config.serverPort}/`)
+      })
+}
+else {
+    app.listen(config.serverPort, () => {
+        console.log(`Example app listening on port ${config.serverPort}! Go to http://${config.fqdn}:${config.serverPort}/`)
+    });
+    
+}
+
+
