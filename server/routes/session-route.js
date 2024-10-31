@@ -13,7 +13,7 @@ router.get('/',  (req, res) => {
         res.redirect('/users');
     } else {
         console.log("[DEBUG] Not logged in")
-        res.render('index', {title: 'Verify OIDC Demo', signupEnabled: config.signupLink != "", signupLink: config.signupLink })
+        res.render('index', {title: 'OIDC Test Application', signupEnabled: config.signupLink != "", signupLink: config.signupLink })
     }
 });
 
