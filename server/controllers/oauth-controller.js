@@ -24,6 +24,9 @@ class OAuthController {
     }
 
     aznCallback = (req, res) => {
+        console.log("aznCallback called");
+        console.log("req: "+ JSON.stringify(req));
+        console.log("req.url: "+ JSON.stringify(req.url));
         this._authClient.getToken(req.url).then(token => {
     
             console.log("Got token - " + JSON.stringify(token));
