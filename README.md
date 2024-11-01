@@ -125,3 +125,16 @@ Then run the application:
 ```
 npm start
 ```
+
+
+
+# Configuration For IBM Verify Access
+
+According to the IBM Verify Access documentation on OAuth 2.0 endpoints at https://www.ibm.com/docs/en/sva/10.0.8?topic=support-oauth-20-endpoints the endpoints should be:
+
+Metadata Endpoint: https://host.domain.tld/mga/sps/oauth/oauth20/metadata/OidcOpName
+Authorization Endpoint: https://host.domain.tld/mga/sps/oauth/oauth20/authorize
+Token Endpoint: https://host.domain.tld/mga/sps/oauth/oauth20/token
+Userinfo Endpoint: https://host.domain.tld/mga/sps/oauth/oauth20/userinfo
+Logout Endpoint: https://host.domain.tld/mga/sps/oauth/oauth20/logout
+
