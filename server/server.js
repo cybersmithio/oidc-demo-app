@@ -7,7 +7,15 @@ const usersRoutes = require('./routes/users-route');
 const config = require('./controllers/config').Config;
 var fs = require('fs');
 var https = require('https')
-
+//require('https').globalAgent.options.rejectUnauthorized = false;
+//https.globalAgent.options.rejectUnauthorized = false;
+console.log("Config:")
+console.log(config)
+if(config.rejectUnauthorized == 'false') {
+    console.log("Setting HTTPS to not reject Unauthorized ")
+    https.globalAgent.options.rejectUnauthorized = false;
+}
+    
 
 // initialize handlebars
 var hbs = handlebars.create({
