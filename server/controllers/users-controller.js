@@ -9,7 +9,7 @@ class UsersController {
 
     getUserPayload = (req) => {
         let authToken = OAuthController.getAuthToken(req);
-        let decoded = jwt.decode(authToken.id_token);
+        let decoded = jwt.decode(authToken);
         return decoded;
     }
 
@@ -40,7 +40,7 @@ class UsersController {
 
         let idTokenPayload = this.getUserPayload(req);
         let auth = {
-            accessToken: OAuthController.getAuthToken(req).access_token
+            accessToken: OAuthController.getAuthToken(req)
         }
 
         let dpcmClient = new Privacy(config, auth, {})

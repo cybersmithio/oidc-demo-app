@@ -75,12 +75,14 @@ class OAuthController {
     }
 
     static isLoggedIn(req) {
-        return req.session != null && req.session.authToken != null && req.session.authToken != "";
+        console.log("Checking if user is logged in...");
+        
+        return req.session != undefined && req.session.passport != undefined && req.session.passport.user != undefined && req.session.passport.user.id != undefined && req.session.passport.user.id != "";
     }
 
     static getAuthToken = (req) => {
-        if (req.session) {
-            return req.session.authToken
+        if (req.session != undefined && req.session.passport != undefined && req.session.passport.user != undefined && req.session.passport.user.refreshToken != undefined && req.session.passport.user.refreshToken != "") {
+            return req.session.passport.user.refreshToken
         }
     
         return null;
