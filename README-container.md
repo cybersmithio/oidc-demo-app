@@ -21,3 +21,10 @@ docker run --rm -it --name oidctestapp -p 443:3000 --mount type=bind,source=/c/U
 ```
 docker push cybersmithio/oidctestapp
 ```
+
+
+# Save the Image To A File
+
+```
+docker save cybersmithio/oidctestapp > oidctestapp
+```
